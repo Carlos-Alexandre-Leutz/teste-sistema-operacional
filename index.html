@@ -29,12 +29,12 @@
     <p id="log"></p>
     <script>
         let log = document.querySelector("#log");
-        document.addEventListener("click", logKey);
-
-        function logKey(e) {
-            log.textContent = `The ctrl key is pressed: ${e.ctrlKey}`;
-            console.log(e)
-        }
+        document.addEventListener('keydown', function(event) {
+          if (event.metaKey) {
+            log.textContent = `A tecla Command foi pressionada!`;
+            console.log('A tecla Command foi pressionada!',event.metaKey);
+          }
+        });
 
         HTMLDocument.prototype.e = document.getElementById;
         var el_up = document.e("GFG_UP");
